@@ -1,0 +1,41 @@
+{
+	"name": "@live-html-editor/browser",
+	"version": "0.1.3",
+	"description": "An ideal html-editor for development purposes. It has a NEAT output + capability to save directly from browser into your sources",
+	"main": "dist/main.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack --mode=production",
+		"watch": "webpack --mode=development --watch",
+		"patch-and-publish": "npm version patch && npm publish"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/live-html-editor/browser.git"
+	},
+	"keywords": [
+		"editor",
+		"live-editor",
+		"html-editor",
+		"rich-text-html-editor",
+		"formatted-text-html-editor",
+		"clean-html-editor",
+		"neat-html-editor",
+		"clean-output",
+		"live-html-editor",
+		"contenteditable",
+		"dev4dev"
+	],
+	"author": "S. M. Mir-Ismaili <s.m.mirismaili@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/live-html-editor/browser/issues"
+	},
+	"homepage": "https://github.com/live-html-editor/browser#readme",
+	"devDependencies": {
+		"ts-loader": "^5.3.3",
+		"typescript": "^3.4.3",
+		"webpack": "^4.30.0",
+		"webpack-cli": "^3.3.0"
+	}
+}

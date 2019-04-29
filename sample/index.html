@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Live-Html-Editor Sample</title>
+
+	<meta charset="UTF-8" />
+
+	<script src="./node_modules/@live-html-editor/browser/dist/main.js"></script>
+	<script src="./index.js"></script>
+
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body onload="initPage()">
+    <p><font face="Segoe UI" color="red"><b><i>
+        NOTE: The output of the below section (that is editable) will write into
+        designated sections of designated source files (see <code>initPage()</code>
+        implementation in <code>index.js</code>) after choosing 'Save' button.
+    </i></b></font></p>
+
+    <!-- NOTE: You can use `data-live-editor` instead of `live-editor`. But not both (when there are multiple editors). -->
+    <!--suppress HtmlUnknownAttribute -->
+    <div live-editor>
+        [![npm version](https://badge.fury.io/js/%40live-html-editor%2Fbrowser.svg)](//npmjs.com/package/@live-html-editor/browser)
+
+        <h1 dir="auto">
+            Live-Html-Editor
+        </h1>
+
+        <p dir="auto">
+            <b><i>Ideal</i></b> for development purposes ... It has a <i><b>neat output</b> + capability to save in your sources</i>
+        </p>
+    </div>
+</body>
+</html>

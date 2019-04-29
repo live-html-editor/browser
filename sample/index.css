@@ -1,0 +1,83 @@
+#toolBar1 select {
+    font-size: 10px;
+}
+
+html, body {
+    height: 100%;
+}
+
+body form {
+    height: 90%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+a:active, a:hover {
+    outline-width: 0;
+}
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+a {
+    background-color: transparent;
+}
+* {
+    box-sizing: border-box;
+}
+
+[live-editor] h1, [live-editor] h2 {
+    border-bottom: 1px solid #eaecef;
+    padding-bottom: .3em;
+}
+[live-editor] h1 {
+    font-size: 2em;
+}
+[live-editor] h2 {
+    font-size: 1.5em;
+}
+[live-editor] h3 {
+    font-size: 1.25em;
+}
+[live-editor] h4 {
+    font-size: 1em;
+}
+[live-editor] h5 {
+    font-size: .875em;
+}
+[live-editor] h6 {
+    color: #6a737d;
+    font-size: .85em;
+}
+[live-editor] h1, [live-editor] h2, [live-editor] h3, [live-editor] h4, [live-editor] h5, [live-editor] h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    margin-top: 24px;
+}
+
+[live-editor] {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+[live-editor] blockquote {
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em;
+}
+
+[live-editor] blockquote, [live-editor] details, [live-editor] dl, [live-editor] ol, [live-editor] p, [live-editor] pre, [live-editor] table, [live-editor] ul {
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+/* Override default styles of source-preview here: */
+/*[live-editor] > .editable-source {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    tab-size: 4;
+}*/
