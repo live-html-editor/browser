@@ -1,8 +1,10 @@
 /src/
-/tsconfig.json
-/webpack.config.js
+tsconfig.json
+tslint.json
+webpack.config.js
 /.babelrc
 /.eslintrc
 /test.js
-/.gitignore
+.gitignore
 /sample/
+*.iml

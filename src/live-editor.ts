@@ -7,7 +7,6 @@ import {BeautifyHtml, CodeStyle, DEF_CODE_STYLE} from "./BeautifyHtml";
  * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io).
  * Created on 1397/11/9 (2019/1/29).
  */
-
 class EditorManager implements Options {
 	serverUrl: string;
 	codeStyle: CodeStyle;
@@ -36,7 +35,7 @@ class EditorManager implements Options {
 		
 		for (const editable of editables)
 			this.editors.push({
-				editable: <HTMLElement>editable,
+				editable: editable as HTMLElement,
 				index: editable.getAttribute(this.idAttr),
 				initDoc: editable.innerHTML,
 			});
@@ -75,13 +74,13 @@ class EditorManager implements Options {
 		}
 		
 		for (const editor of this.editors)
-			(<any>editor.editable).contentEditable = true;
+			(editor.editable as any).contentEditable = true;
 	}
 	
 	// noinspection JSUnusedGlobalSymbols
 	shutdown() {
 		for (const editor of this.editors)
-			(<any>editor.editable).contentEditable = false;
+			(editor.editable as any).contentEditable = false;
 		
 		document.body.removeChild(this.toolsContainer);
 		
@@ -141,7 +140,7 @@ class EditorManager implements Options {
 		for (const editor of this.editors) {
 			const editable = editor.editable;
 			
-			(<any>editable).contentEditable = false;
+			(editable as any).contentEditable = false;
 			const source = this.beautifier.beautify(editable);
 			editable.innerHTML = '';
 			
@@ -153,7 +152,7 @@ class EditorManager implements Options {
 			oSourcePreview.setAttribute('dir', 'auto');
 			oSourcePreview.className = 'editable-source';
 			oSourcePreview.innerText = source;
-			(<any>oSourcePreview).contentEditable = true;
+			(oSourcePreview as any).contentEditable = true;
 			
 			editable.appendChild(oSourcePreview);
 			//document.execCommand('defaultParagraphSeparator', false, 'div');
@@ -169,9 +168,9 @@ class EditorManager implements Options {
 			
 			// const oContent = document.createRange();
 			// oContent.selectNodeContents(editable.firstChild);
-			editable.innerHTML = (<HTMLElement>editable.firstElementChild).innerText; //oContent.toString();
+			editable.innerHTML = (editable.firstElementChild as HTMLElement).innerText; //oContent.toString();
 			
-			(<any>editable).contentEditable = true;
+			(editable as any).contentEditable = true;
 			
 			editable.focus();
 		}

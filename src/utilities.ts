@@ -177,7 +177,7 @@ export function getOpenTag(element: HTMLElement): string {
  * {@link http://jsperf.com/string-ocurrence-split-vs-match/2}
  *
  * Function that count occurrences of a substring in a string;
- * @param {String} string               The string
+ * @param {String} str               The string
  * @param {String} subString            The sub string to search for
  * @param {Boolean} [allowOverlapping]  Optional. (Default:false)
  *
@@ -185,15 +185,15 @@ export function getOpenTag(element: HTMLElement): string {
  * @see Unit Test https://jsfiddle.net/Victornpb/5axuh96u/
  * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
  */
-export function countOccurrences(string: string, subString: string, allowOverlapping = false) {
-	if (subString.length === 0) return string.length + 1;
+export function countOccurrences(str: string, subString: string, allowOverlapping = false) {
+	if (subString.length === 0) return str.length + 1;
 	
 	let n = 0;
 	let pos = 0;
 	const step = allowOverlapping ? 1 : subString.length;
 	
 	while (true) {
-		pos = string.indexOf(subString, pos);
+		pos = str.indexOf(subString, pos);
 		if (pos === -1) break;
 		
 		++n;

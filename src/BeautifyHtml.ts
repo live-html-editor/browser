@@ -59,6 +59,7 @@ export class BeautifyHtml implements CodeStyle {
 		
 		const nodes = element.childNodes;
 		const l = nodes.length;
+		// tslint:disable-next-line
 		const l_1 = l - 1;
 		let isBlock: boolean;
 		let previousIsBlock = false;
@@ -121,7 +122,7 @@ export class BeautifyHtml implements CodeStyle {
 							continue;
 						}
 						
-						text += (<HTMLElement>node).outerHTML;
+						text += (node as HTMLElement).outerHTML;
 					}
 					
 					if (text === separator) {
@@ -146,10 +147,10 @@ export class BeautifyHtml implements CodeStyle {
 							continue;
 						}
 						
-						const outerHtml = (<HTMLElement>node).outerHTML;
+						const outerHtml = (node as HTMLElement).outerHTML;
 						originalText += outerHtml;
 						
-						const innerHtml = (<HTMLElement>node).innerHTML;
+						const innerHtml = (node as HTMLElement).innerHTML;
 						const length = outerHtml.length;
 						
 						const openTagLength = outerHtml[length - 2] === '/' ?
@@ -176,9 +177,6 @@ export class BeautifyHtml implements CodeStyle {
 					for (const marker of markers) {
 						if (m > 0) text += absContinuationIndents;
 						text += originalText.slice(m, marker) + '\n';
-						if (marker===307) {
-							console.log(originalText.slice(m, marker))
-						}
 						m = marker;
 					}
 					if (m > 0) text += absContinuationIndents;
@@ -207,7 +205,7 @@ export class BeautifyHtml implements CodeStyle {
 			
 			previousIsBlock = true;
 			
-			output += this.beautifyR(<HTMLElement>node, indents);
+			output += this.beautifyR(node as HTMLElement, indents);
 			
 			if (i === l_1) output += separator;
 		}
