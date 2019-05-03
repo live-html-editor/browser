@@ -1,11 +1,10 @@
-import {TextWrap, WrapStyle} from "./TextWrap";
+import TextWrap, {WrapStyle} from '@live-html-editor/text-wrap'
 import {getOpenTag, initiateObject} from "./utilities";
 
 /**
  * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io).
  * Created on 1398/2/5 (2019/4/25).
  */
-
 export class BeautifyHtml implements CodeStyle {
 	private static readonly BLOCKS = /^(?:P|H[123456]|BLOCKQUOTE|[UO]L|LI|DIV)$/;
 	//private static readonly TEXT_OR_INLINE = /^(?:#text|[BIA]|CODE|FONT|SPAN)$/;
@@ -34,7 +33,7 @@ export class BeautifyHtml implements CodeStyle {
 	 * See {@link #BLOCKS} variable.
 	 * @param parentIndents - Set to `null` if you want to beautify `innerHTML` only.
 	 */
-	beautifyR(element: HTMLElement, parentIndents: string): string { if (!BeautifyHtml.BLOCKS.test(element.nodeName)) console.error('false');
+	beautifyR(element: HTMLElement, parentIndents: string): string { //if (!BeautifyHtml.BLOCKS.test(element.nodeName)) console.error('false');
 		//if (!BeautifyHtml.BLOCKS.test(element.nodeName)) return element.outerHTML;
 		
 		let indents: string;

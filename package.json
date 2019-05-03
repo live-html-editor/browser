@@ -37,5 +37,8 @@
 		"typescript": "^3.4.3",
 		"webpack": "^4.30.0",
 		"webpack-cli": "^3.3.0"
+	},
+	"dependencies": {
+		"@live-html-editor/text-wrap": "0.1.2"
 	}
 }
