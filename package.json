@@ -47,5 +47,8 @@
 	},
 	"dependencies": {
 		"@live-html-editor/text-wrap": "0.1.2"
+	},
+	"peerDependencies": {
+		"@live-html-editor/server": "~0.1.2"
 	}
 }
