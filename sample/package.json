@@ -1,7 +1,7 @@
 {
   "name": "sample",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample usage of @live-html-editor/[browser & server]",
   "main": "index.js",
   "scripts": {
     "live-server": "live-server --port 3000"
@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/live-html-editor/browser#readme",
   "dependencies": {
-    "@live-html-editor/browser": "0.1.2"
+    "@live-html-editor/browser": "latest"
   },
   "devDependencies": {
-    "@live-html-editor/server": "0.1.2"
+    "@live-html-editor/server": "latest"
   }
 }
