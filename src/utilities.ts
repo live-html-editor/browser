@@ -170,44 +170,11 @@ export function getOpenTag(element: HTMLElement): string {
 	return outerHtml.slice(0, openTagLength);
 }
 
-/**
- * @deprecated **Use `.split()` instead**. See:
- * {@link https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#comment49051171_4009756}
- * and
- * {@link http://jsperf.com/string-ocurrence-split-vs-match/2}
- *
- * Function that count occurrences of a substring in a string;
- * @param {String} str               The string
- * @param {String} subString            The sub string to search for
- * @param {Boolean} [allowOverlapping]  Optional. (Default:false)
- *
- * @author Vitim.us https://gist.github.com/victornpb/7736865
- * @see Unit Test https://jsfiddle.net/Victornpb/5axuh96u/
- * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
- */
-export function countOccurrences(str: string, subString: string, allowOverlapping = false) {
-	if (subString.length === 0) return str.length + 1;
-	
-	let n = 0;
-	let pos = 0;
-	const step = allowOverlapping ? 1 : subString.length;
-	
-	while (true) {
-		pos = str.indexOf(subString, pos);
-		if (pos === -1) break;
-		
-		++n;
-		pos += step;
-	}
-	
-	return n;
-}
-
 export function initiateObject(source: { [k: string]: any }, target: { [k: string]: any }, def: object) {
 	for (const [key, defValue] of Object.entries(def)) {
 		const targetValue = target === undefined ? undefined : target[key];
 		
-		if (typeof defValue === 'object' && defValue !== null) {
+		if (typeof defValue === 'object' && defValue !== null && !Array.isArray(defValue)) {
 			source[key] = {};
 			initiateObject(source[key], targetValue, defValue);
 			continue;
@@ -216,3 +183,36 @@ export function initiateObject(source: { [k: string]: any }, target: { [k: strin
 		source[key] = targetValue === undefined ? defValue : targetValue;
 	}
 }
+
+// /**
+//  * @deprecated **Use `.split()` instead**. See:
+//  * {@link https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#comment49051171_4009756}
+//  * and
+//  * {@link http://jsperf.com/string-ocurrence-split-vs-match/2}
+//  *
+//  * Function that count occurrences of a substring in a string;
+//  * @param {String} str               The string
+//  * @param {String} subString            The sub string to search for
+//  * @param {Boolean} [allowOverlapping]  Optional. (Default:false)
+//  *
+//  * @author Vitim.us https://gist.github.com/victornpb/7736865
+//  * @see Unit Test https://jsfiddle.net/Victornpb/5axuh96u/
+//  * @see http://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string/7924240#7924240
+//  */
+// export function countOccurrences(str: string, subString: string, allowOverlapping = false) {
+// 	if (subString.length === 0) return str.length + 1;
+//
+// 	let n = 0;
+// 	let pos = 0;
+// 	const step = allowOverlapping ? 1 : subString.length;
+//
+// 	while (true) {
+// 		pos = str.indexOf(subString, pos);
+// 		if (pos === -1) break;
+//
+// 		++n;
+// 		pos += step;
+// 	}
+//
+// 	return n;
+// }

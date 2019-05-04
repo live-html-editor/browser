@@ -1,6 +1,6 @@
 {
 	"name": "@live-html-editor/browser",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "An ideal html-editor for development purposes. It has a NEAT output + capability to save directly from browser into your sources",
 	"main": "dist/main.js",
 	"scripts": {

@@ -1,10 +1,5 @@
-/src/
-tsconfig.json
-tslint.json
-webpack.config.js
-/.babelrc
-/.eslintrc
-/test.js
-.gitignore
-/sample/
-*.iml
+*
+!/LICENSE
+!/dist/types/**/*
+!/dist/*.js
+!/dist/*.js.map

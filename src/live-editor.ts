@@ -177,6 +177,7 @@ class EditorManager implements Options {
 	}
 }
 
+// noinspection JSUnusedGlobalSymbols
 export const editorManager = new EditorManager();
 
 interface Options {
