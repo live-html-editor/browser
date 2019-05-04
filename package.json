@@ -1,6 +1,6 @@
 {
 	"name": "@live-html-editor/browser",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "An ideal html-editor for development purposes. It has a NEAT output + capability to save directly from browser into your sources",
 	"main": "dist/main.js",
 	"scripts": {
@@ -47,8 +47,5 @@
 	},
 	"dependencies": {
 		"@live-html-editor/text-wrap": "0.1.2"
-	},
-	"peerDependencies": {
-		"@live-html-editor/server": "~0.1.2"
 	}
 }
