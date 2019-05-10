@@ -1,13 +1,19 @@
 {
 	"name": "@live-html-editor/browser",
-	"version": "0.1.5",
+	"version": "0.2.0",
 	"description": "An ideal html-editor for development purposes. It has a NEAT output + capability to save directly from browser into your sources",
-	"main": "dist/main.js",
+	"main": "dist/bundle.js",
+	"module": "dist/bundle.esm.js",
+	"types": "dist/types/main.d.ts",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "webpack --mode=production",
-		"watch": "webpack --mode=development --watch",
-		"patch-and-publish": "npm version patch && npm publish"
+		"prebuild": "rimraf dist",
+		"build": "rollup -c --environment BUILD:production",
+		"start:ru": "rollup -cw",
+		"tsc": "tsc --module commonjs",
+		"tsc:watch": "tsc --module commonjs --watch",
+		"build:wp": "webpack --mode=production",
+		"start": "webpack --mode=development --watch"
 	},
 	"repository": {
 		"type": "git",
@@ -37,6 +43,16 @@
 		"singleQuote": true
 	},
 	"devDependencies": {
+		"@live-html-editor/text-wrap": "0.1.13",
+		"lodash.camelcase": "^4.3.0",
+		"rimraf": "^2.6.3",
+		"rollup": "^1.10.1",
+		"rollup-plugin-commonjs": "^9.3.4",
+		"rollup-plugin-node-resolve": "^4.2.3",
+		"rollup-plugin-sourcemaps": "^0.4.2",
+		"rollup-plugin-terser": "^4.0.4",
+		"rollup-plugin-typescript2": "^0.21.0",
+		"temp-dir": "^2.0.0",
 		"ts-loader": "^5.3.3",
 		"tslint": "^5.16.0",
 		"tslint-config-prettier": "^1.18.0",
@@ -45,7 +61,5 @@
 		"webpack": "^4.30.0",
 		"webpack-cli": "^3.3.0"
 	},
-	"dependencies": {
-		"@live-html-editor/text-wrap": "0.1.2"
-	}
+	"dependencies": {}
 }

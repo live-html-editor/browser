@@ -1,17 +1,16 @@
 /**
- * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io).
+ * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io)
  * Created on 1398/1/29 (2019/4/18).
  */
-/* global require, __dirname */
 "use strict";
 
 const path = require('path');
-const libraryName = 'liveHtmlEditor';
+const libraryName = 'liveEditor';
 
 module.exports = {
 	target: 'web',
 	entry: './src/live-editor.ts',
-	devtool: 'inline-source-map',
+	devtool: 'source-map',
 	module: {
 		rules: [
 			{
@@ -25,7 +24,7 @@ module.exports = {
 		extensions: [ '.tsx', '.ts', '.js' ]
 	},
 	output: {
-		filename: '[name].js',
+		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist'),
 		library: libraryName,
 		libraryTarget: 'var',
