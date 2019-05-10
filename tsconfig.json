@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"outDir": "./tsc-out/",
 		"noImplicitAny": true,
-		"module": "es6",
+		"module": "es2015",
 		"moduleResolution": "node",
 		"target": "es6",
 		"lib": [
@@ -10,13 +10,15 @@
 			"dom",
 			"dom.iterable"
 		],
-		"allowJs": true,
-		"sourceMap": true
+		"strict": true,
+		"sourceMap": true,
+		"declaration": true,
+		"declarationDir": "dist/types",
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true
 	},
-	"exclude": [
-		"node_modules"
-	],
-	"files": [
-		"src/live-editor.ts"
+	"include": [
+		"src"
 	]
 }

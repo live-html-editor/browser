@@ -2,7 +2,7 @@ import TextWrap, {WrapStyle} from '@live-html-editor/text-wrap'
 import {getOpenTag, initiateObject} from "./utilities";
 
 /**
- * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io).
+ * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io)
  * Created on 1398/2/5 (2019/4/25).
  */
 export class BeautifyHtml implements CodeStyle {
@@ -12,12 +12,12 @@ export class BeautifyHtml implements CodeStyle {
 	private readonly wrapper: TextWrap;
 	
 	// noinspection JSUnusedGlobalSymbols
-	readonly tabLength: number;
-	readonly indent: string;
-	readonly continuationIndent: string;
-	readonly keepIntentsOnEmptyLines: boolean;
-	readonly emptyLinesBetweenBlocks: number;
-	readonly wrapOn: number;
+	readonly tabLength!: number;
+	readonly indent!: string;
+	readonly continuationIndent!: string;
+	readonly keepIntentsOnEmptyLines!: boolean;
+	readonly emptyLinesBetweenBlocks!: number;
+	readonly wrapOn!: number;
 	
 	constructor(codeStyle: CodeStyle = DEF_CODE_STYLE) {
 		initiateObject(this, codeStyle, DEF_CODE_STYLE);
@@ -33,7 +33,7 @@ export class BeautifyHtml implements CodeStyle {
 	 * See {@link #BLOCKS} variable.
 	 * @param parentIndents - Set to `null` if you want to beautify `innerHTML` only.
 	 */
-	beautifyR(element: HTMLElement, parentIndents: string): string { //if (!BeautifyHtml.BLOCKS.test(element.nodeName)) console.error('false');
+	beautifyR(element: HTMLElement, parentIndents: string | null): string { //if (!BeautifyHtml.BLOCKS.test(element.nodeName)) console.error('false');
 		//if (!BeautifyHtml.BLOCKS.test(element.nodeName)) return element.outerHTML;
 		
 		let indents: string;
@@ -138,7 +138,7 @@ export class BeautifyHtml implements CodeStyle {
 						node = nodes[j];
 						
 						if (node.nodeType !== Node.ELEMENT_NODE) {
-							let nodeValue = node.nodeValue;
+							let nodeValue = node.nodeValue!;
 							originalText += nodeValue;
 							
 							// Don't wrap spaces in [![...]
@@ -184,12 +184,12 @@ export class BeautifyHtml implements CodeStyle {
 				}
 				//console.log(text);
 				
-				const start = /^\s*/.exec(text)[0];
+				const start = /^\s*/.exec(text)![0];
 				if (start.length === text.length) { // If text only contains white spaces
 					output += separator; //console.debug(JSON.stringify(output));
 					continue;
 				}
-				const end = /\s*$/.exec(text)[0];
+				const end = /\s*$/.exec(text)![0];
 				
 				//console.debug(text !== text);console.debug(JSON.stringify(start));console.debug(JSON.stringify(end));
 				output +=

@@ -1,10 +1,9 @@
+// noinspection CssUnusedSymbol
+
 /**
- * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io).
+ * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io)
  * Created on 1398/1/29 (2019/4/18).
  */
-"use strict";
-
-// noinspection CssUnusedSymbol
 export const styleSheet = `
 	/* Default styles of source-preview. Can be overridden by consumer: */
 	.editable-source {

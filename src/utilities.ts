@@ -1,5 +1,5 @@
 /**
- * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io).
+ * @author [S. Mahdi Mir-Ismaili](https://mirismaili.github.io)
  * Created on 1398/1/29 (2019/4/18).
  */
 
@@ -65,7 +65,7 @@ export class Draggable {
 		
 		document.addEventListener('mousemove', Draggable.onMouseMove);
 		
-		document.addEventListener('mouseup', (event) => {
+		document.addEventListener('mouseup', event => {
 			document.removeEventListener('mousemove', Draggable.onMouseMove);
 			
 			const left = Draggable.element.offsetLeft + (event.clientX - Draggable.x);
