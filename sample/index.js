@@ -12,10 +12,11 @@ window.onload = () => {
 	editorManager.config({
 		serverUrl: 'http://127.0.0.1:3000',
 		sourceFiles: [
-			{
-				// This is on server's local machine and can be relative. If so
-				// base-path would be server's working directory.
-				path: '../../tempst/index.html',
+			{ // Source 1:
+				
+				// This is ON SERVER'S LOCAL MACHINE and can be relative. If so
+				// the base-path would be SERVER'S WORKING DIRECTORY.
+				path: './index.html',
 				
 				// Can be automatically detected from the file's extension. So is
 				// unnecessary in this case. This determines how the result must
@@ -26,13 +27,15 @@ window.onload = () => {
 				// Then `index` comes from: [live-editor=INDEX] and must be UNIQUE.
 				domPath: index => '[live-editor]',
 			},
-			{
-				// See the above note.
-				path: '../../TextWrap/README.md',
-				
-				// This is also unnecessary (in this case). See the above note.
-				writeMethod: 'markdown',
-			}
+			//
+			// { // Another source:
+			//
+			// 	// See the above note.
+			// 	path: './README.md',
+			//
+			// 	// This is also unnecessary (in this case). See the above note.
+			// 	writeMethod: 'markdown',
+			// }
 		],
 		codeStyle: {
 			wrapOn: 0,
